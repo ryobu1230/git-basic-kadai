@@ -1,0 +1,39 @@
+涼子@LAPTOP-SOI37H56 MINGW64 ~ (main)
+$ cd Desktop
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (main)
+$ cd git_challenge
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (main)
+$ echo "ファイル追加" > hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (main)
+$ echo "日本語訳を追記" >> hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (main)
+$ git add hello_world.txt
+warning: in the working copy of 'Desktop/git_challenge/hello_world.txt', LF will be replaced by CRLF the next time Git touches it
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (main)
+$ git commit -m "ファイル追加"
+[main 020c469] ファイル追加
+ 1 file changed, 2 insertions(+)
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (main)
+$ echo "hello_world.txtを追加" >> hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (main)
+$ git add hello_world.txt
+warning: in the working copy of 'Desktop/git_challenge/hello_world.txt', LF will be replaced by CRLF the next time Git touches it
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (main)
+$ git commit -m "日本語訳を追記"
+[main 3726243] 日本語訳を追記
+ 1 file changed, 1 insertion(+)
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (main)
+$ git log --oneline
+3726243 (HEAD -> main) 日本語訳を追記
+020c469 ファイル追加
+123460b HELLO, world
+
