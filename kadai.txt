@@ -1,0 +1,223 @@
+涼子@LAPTOP-SOI37H56 MINGW64 ~ (feature)
+$ cd Desktop
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ mkdir git_challenge
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ cd git_challenge
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ touch hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ ls
+hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ echo "Hello, world!" > hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ vi hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ echo "こんにちは、世界！" >> hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git add hello_world.txt
+warning: in the working copy of 'Desktop/git_challenge/hello_world.txt', LF will be replaced by CRLF the next time Git touches it
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git commit -m "日本語訳を追記"
+[feature 061c107] 日本語訳を追記
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git log --oneline
+061c107 (HEAD -> feature) 日本語訳を追記
+d356001 (main) add kadai_004 directory
+3726243 日本語訳を追記
+020c469 ファイル追加
+123460b HELLO, world
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ cd Desktop
+bash: cd: Desktop: No such file or directory
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git reflog expire --expire=now --all
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git log --oneline
+061c107 (HEAD -> feature) 日本語訳を追記
+d356001 (main) add kadai_004 directory
+3726243 日本語訳を追記
+020c469 ファイル追加
+123460b HELLO, world
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git branch -D develop
+error: branch 'develop' not found
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git gc --aggressive --prune=now
+Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (25/25), done.
+Total 25 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git push --force origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'origin'
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git log --oneline
+061c107 (HEAD -> feature) 日本語訳を追記
+d356001 (main) add kadai_004 directory
+3726243 日本語訳を追記
+020c469 ファイル追加
+123460b HELLO, world
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git config receive.denynonfastforwards false
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git push --force origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'origin'
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git log --oneline
+061c107 (HEAD -> feature) 日本語訳を追記
+d356001 (main) add kadai_004 directory
+3726243 日本語訳を追記
+020c469 ファイル追加
+123460b HELLO, world
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ ls -a
+./  ../  hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ cd ..
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ ls -a
+ ./           0316-2.jpg   0316-5.jpg                 git_challenge/
+ ../          0316-3.jpg  'Visual Studio Code.lnk'*   kadai_004.txt
+ 0316-1.jpg   0316-4.jpg   desktop.ini
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ git reset --hard HEAD^
+HEAD is now at d356001 add kadai_004 directory
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ git log --oneline
+d356001 (HEAD -> feature, main) add kadai_004 directory
+3726243 日本語訳を追記
+020c469 ファイル追加
+123460b HELLO, world
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ git reset --hard HEAD^
+HEAD is now at 3726243 日本語訳を追記
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ git reset --hard HEAD^
+HEAD is now at 020c469 ファイル追加
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ git reset --hard HEAD^
+HEAD is now at 123460b HELLO, world
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ ls -a
+ ./           0316-2.jpg   0316-5.jpg                 git_challenge/
+ ../          0316-3.jpg  'Visual Studio Code.lnk'*   kadai_004.txt
+ 0316-1.jpg   0316-4.jpg   desktop.ini
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop (feature)
+$ cd git_challenge
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git add hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git commit -m "日本語訳を追記"
+warning: could not open directory 'AppData/Local/Application Data/': Permission denied
+warning: could not open directory 'Application Data/': Permission denied
+warning: could not open directory 'Cookies/': Permission denied
+warning: could not open directory 'Local Settings/': Permission denied
+warning: could not open directory 'My Documents/': Permission denied
+warning: could not open directory 'NetHood/': Permission denied
+warning: could not open directory 'PrintHood/': Permission denied
+warning: could not open directory 'Recent/': Permission denied
+warning: could not open directory 'SendTo/': Permission denied
+warning: could not open directory 'Templates/': Permission denied
+warning: could not open directory 'スタート メニュー/': Permission denied
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../.VirtualBox/
+        ../../.bash_history
+        ../../.gitconfig
+        ../../.lesshst
+        ../../.viminfo
+        ../../.vscode/
+        ../../3D Objects/
+        ../../AppData/
+        ../../Contacts/
+        ../0316-1.jpg
+        ../0316-2.jpg
+        ../0316-3.jpg
+        ../0316-4.jpg
+        ../0316-5.jpg
+        ../Visual Studio Code.lnk
+        ../desktop.ini
+        ../kadai_004.txt
+        ../../Documents/
+        ../../Downloads/
+        ../../Favorites/
+        ../../Links/
+        ../../Music/
+        ../../NTUSER.DAT
+        ../../NTUSER.DAT{56ab9769-c850-11ed-97a9-98364a841d11}.TM.blf
+        ../../NTUSER.DAT{56ab9769-c850-11ed-97a9-98364a841d11}.TMContainer00000000000000000001.regtrans-ms
+        ../../NTUSER.DAT{56ab9769-c850-11ed-97a9-98364a841d11}.TMContainer00000000000000000002.regtrans-ms
+        ../../OneDrive/
+        ../../Pictures/
+        ../../Saved Games/
+        ../../Searches/
+        ../../Videos/
+        ../../VirtualBox VMs/
+        ../../ntuser.dat.LOG1
+        ../../ntuser.dat.LOG2
+        ../../ntuser.ini
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ vi hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ echo " Hello, world" > hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ echo " こんにちは、世界！" >> hello_world.txt
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git add hello_world.txt
+warning: in the working copy of 'Desktop/git_challenge/hello_world.txt', LF will be replaced by CRLF the next time Git touches it
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git commit -m "日本語訳を追記"
+[feature 33bb485] 日本語訳を追記
+ 1 file changed, 2 insertions(+)
+
+涼子@LAPTOP-SOI37H56 MINGW64 ~/Desktop/git_challenge (feature)
+$ git log --oneline
+33bb485 (HEAD -> feature) 日本語訳を追記
+123460b HELLO, world
